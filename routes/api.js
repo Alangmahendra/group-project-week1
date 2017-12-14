@@ -19,4 +19,8 @@ router.get('/users', getAllUsers)
 
 router.delete('/users/:id', findByIdAndRemove)
 
+// ============== api Live Scrore
+
+router.get('/score', )
+
 module.exports = router
