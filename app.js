@@ -24,4 +24,4 @@ const api = require('./routes/api')
 app.use('/api', api )
 app.use('/api/football', require('./routes/score'))
 
-app.listen(process.env.PORT || '8000')
+app.listen(8000)

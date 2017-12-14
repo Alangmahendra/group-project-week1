@@ -1,12 +1,17 @@
 const express = require('express')
 const router = express.Router()
+const { cekToken } = require('../middlleware/auth')
 const { createUser,
-  findById, 
+  findById,
   findByIdAndUpdate,
   getAllUsers,
-  findByIdAndRemove
+  findByIdAndRemove,
+  login
   } = require('../controllers/userCtrl.js')
 
+
+// ================= login
+router.post('/login', login)
 
 // ================= users 
 router.post('/users', createUser)
@@ -19,8 +24,6 @@ router.get('/users', getAllUsers)
 
 router.delete('/users/:id', findByIdAndRemove)
 
-// ============== api Live Scrore
 
-router.get('/score', )
 
 module.exports = router

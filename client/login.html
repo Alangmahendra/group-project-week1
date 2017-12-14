@@ -88,19 +88,18 @@
   }
 
   function login(resp) {
-    axios.post('http://localhost:8000/login', {
+      axios.post('http://localhost:8000/api/login', {
       username: resp.name,
       userId: resp.id,
       accessToken: localStorage.getItem('accessToken')
     })
     .then(function (response) {
-      console.log(response);
+      console.log(response, 'ini token dari sever');
     })
     .catch(function (error) {
       console.log(error);
     });
-    console.log('ini resp',resp.name);
-    // console.log(localStorage.getItem('accessToken'));
+    console.log('ini resp', resp.name);
   }
 
 </script>
