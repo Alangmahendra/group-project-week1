@@ -21,5 +21,21 @@ module.exports = {
         res.status(500).json(err)
       })
   },
-  
+  getTeams : function(req,res,next) {
+    
+    let url = `${BaseUrl}/teams?competition_ids=2`
+    axios
+      .get(url, {
+        headers: headers
+      })
+      .then(function({ data }) {
+        res.status(200).json({
+          message: 'Success get Matches',
+          data: data
+        })
+      })
+      .catch(function(err) {
+        res.status(500).json(err)
+      })
+  }
 }
