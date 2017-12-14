@@ -23,5 +23,6 @@ res.send('hello world')
 const api = require('./routes/api')
 app.use('/api', api )
 app.use('/api/football', require('./routes/score'))
+app.use('/api/youtube', require('./routes/youtube'))
 
 app.listen(8000)
