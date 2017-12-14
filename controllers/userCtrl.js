@@ -1,11 +1,11 @@
 const User = require('../models/user-schema')
+const jwt = require('jsonwebtoken')
 let message = ''
 
 const createUser = (req, res) => {
   console.log(req.body)
   User.create({
-    username: req.body.username,
-    email: req.body.email
+    username: req.body.username
   })
   .then(user => {
     message = 'Succes Create One Data'
@@ -27,7 +27,7 @@ const getAllUsers = (req, res) => {
 }
 
 const findById = (req, res) => {
-  User.find({ email: req.params.email })
+  User.find({ username: req.params.username })
   .then(user => {
     res.status(200).send({ user })
   })
@@ -38,8 +38,7 @@ const findById = (req, res) => {
 
 const findByIdAndUpdate = (req, res) => {
   User.findByIdAndUpdate({ _id: req.params.id }, {
-    username: req.body.username,
-    email: req.body.email
+    username: req.body.username
   })
   .then(user => {
     res.status(200).send(user)
@@ -59,11 +58,29 @@ const findByIdAndRemove = (req, res) => {
   })
 }
 
+const login = (req, res) => {
+  console.log(req.body, '-----')
+  User.findOrCreate({ username: req.body.username }, (err, result) => {
+    if (!err) {
+      let payload = {
+        userId: req.body.userId,
+        accesToken: req.body.accesToken
+      }
+      let token = jwt.sign(payload, 'foobar')
+      console.log(token, 'ini token server')
+      res.status(200).send(token)
+    } else {
+      res.status(500).send({ msg: 'wrong input', err: err })
+    }
+  })
+}
+
 
 module.exports = {
   createUser,
   getAllUsers,
   findById,
   findByIdAndUpdate,
-  findByIdAndRemove
+  findByIdAndRemove,
+  login
 }
