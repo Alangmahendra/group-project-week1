@@ -58,7 +58,7 @@ module.exports = {
   },
   getMatchDetail : function(req,res,next) {
     console.log('hit')
-    let url = `${BaseUrl}/matches/${req.params.id}`
+    let url = `${BaseUrl}/matches/${req.query.id}`
     axios
       .get(url, {
         headers: headers
