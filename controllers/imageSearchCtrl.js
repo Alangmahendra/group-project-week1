@@ -1,7 +1,5 @@
-const GoogleImages = require('google-images');
-const searchClient = new GoogleImages(process.env.GOOGLE_CSE_ID, process.env.GOOGLEIMAGESEARCH_APIKEY);
-var imageSearch = require('node-google-image-search');
 
+const imageSearch = require('node-google-image-search');
 
 module.exports = {
   getImages : (req,res,next) => {
