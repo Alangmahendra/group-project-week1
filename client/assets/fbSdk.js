@@ -27,6 +27,7 @@ function testAPI() {
       })
       .then(function (result) {
         localStorage.setItem('jwtToken', result.data)
+        window.location.assign('/matchList.html')
       })
       .catch(function (error) {
         console.log(error);
@@ -43,4 +44,12 @@ function btnLog () {
     localStorage.setItem("accessToken", response.authResponse.accessToken);
     testAPI()
   }, { scope: 'public_profile,email' });
+}
+
+
+function fbLogout() {
+  localStorage.removeItem('accessToken')
+  localStorage.removeItem('jwtToken')
+  window.location.assign('/login.html')
+  
 }

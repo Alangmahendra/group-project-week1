@@ -9,5 +9,5 @@ const {
 router.get('/matches', getMatches)
 router.get('/teams', getTeams)
 router.get('/rounds', getRounds)
-router.get('/match/:id', getMatchDetail)
+router.get('/match', getMatchDetail)
 module.exports = router
