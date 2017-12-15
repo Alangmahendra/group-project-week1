@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
-const FB = require('fb'),
-  fb = new FB.Facebook({ appSecret: process.env.APP_SECRET })
+// const FB = require('fb'),
+//   fb = new FB.Facebook({ appSecret: process.env.APP_SECRET })
 
 
 const cekToken = (req, res, next) => {
