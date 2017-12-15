@@ -1,0 +1,36 @@
+{
+  "name": "express-boilerplate-hacktiv8",
+  "version": "1.0.0",
+  "description": "A boilerplate for Express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azhariemuhammad/express-boilerplate-hacktiv8"
+  },
+  "keywords": [
+    "Express"
+  ],
+  "author": "Azharie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azhariemuhammad/express-boilerplate-hacktiv8/issues"
+  },
+  "homepage": "https://github.com/azhariemuhammad/express-boilerplate-hacktiv8#readme",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
+    "dotenv": "^4.0.0",
+    "express": "^4.16.2",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.7",
+    "mongoose-find-or-create": "^1.3.1",
+    "mongoose-unique-validator": "^1.0.6",
+    "morgan": "^1.9.0",
+    "node-google-image-search": "^1.0.3",
+    "simple-youtube-api": "^5.0.0"
+  }
+}

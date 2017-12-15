@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Facebook Login JavaScript Example</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.17.1/axios.min.js" charset="utf-8"></script>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <meta charset="UTF-8">
+</head>
+
+<body>
+
+
+  <main id="main">
+    <section id="section-a" class="grid">
+      <div class="content-wrap">
+        <h1 style="padding-bottom:0.2em; font-family: 'Montserrat', sans-serif;">FootyVid</h1>
+        <h3>Welcome back. Sign in to access your personalized homepage, follow the game and topics you love. Sign in with FacebookSign
+          in.
+        </h3>
+        <button id="btnLog" onclick="btnLog()">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <div id="fb-root"></div>
+
+  <script src="assets/fbSdk.js"></script>
+</body>
+
+</html>
