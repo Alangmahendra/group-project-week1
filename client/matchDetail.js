@@ -26,11 +26,9 @@ $(document).ready(function() {
     type: 'GET',
     success: function({ data }) {
       let { awayGoals, awayTeam, homeTeam, homeGoals } = data
-      let searchQuery = `${homeTeam.name} vs ${
-        awayTeam.name
-      } ${homeGoals} - ${awayGoals}`
+      let searchQuery = `${homeTeam.name} ${homeGoals} - ${awayGoals} ${awayTeam.name}  Highlights`
       $.ajax({
-        url: `http://localhost:8000/api/youtube/search?limit=5&q=${searchQuery}`,
+        url: `http://localhost:8000/api/youtube/search?limit=6&q=${searchQuery}`,
         type: 'GET',
         success: function(rows) {
           console.log(rows)
