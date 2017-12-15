@@ -1,0 +1,80 @@
+.banner {
+  background-image: linear-gradient(rgba(36, 64, 104, 0.5), rgba(6, 64, 104, 0.5)), url(pexels-photo.jpg);
+  background-size: cover;
+  background-position: center;
+  padding: 70px 0px;
+  color: white;
+  margin-bottom: 7%;
+  height: 300px;
+}
+.navbar-minimal {
+  height: 70px;
+  background: white;
+  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  position: fixed
+}
+.navbar-minimal a {
+  font-size: 2em;
+}
+
+.navbar-minimal p {
+  padding-top: 10px;
+  font-size: 2em;
+}
+
+.main-container {
+  display: flex;
+  width: 900px;
+  margin: 0 auto;
+  
+  
+}
+
+.cards-container {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+#map {
+  height: 100vh;
+  flex: 0 0 400px;
+  position: sticky !important;
+  top: 0 !important;
+}
+
+.card {
+  font-size: 25px;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0, 7);
+  background-size: cover;
+  background-position: center;
+  padding: 50px 0px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  margin: 10px 0px;
+  flex: 0 0 30%;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+@media(max-width: 992px) {
+  .card {
+    flex: 0 0 50%;
+  }
+}
+
+@media(max-width: 768px) {
+  .card {
+    flex: 0 0 100%;
+  }
+}

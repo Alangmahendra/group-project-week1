@@ -32,7 +32,7 @@ function refillMatches() {
     type: 'GET',
     url: footbalApiUrl + '?from=2017-12-13T12:00:00-03:00',
     success: function({data}) {
-      
+      $('#loader').hide()
       $('tbody').empty()
       data.forEach(match => {
         $('tbody').append(template(match))
