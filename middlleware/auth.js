@@ -1,4 +1,6 @@
 const jwt = require('jsonwebtoken')
+const FB = require('fb'),
+  fb = new FB.Facebook({ appSecret: process.env.APP_SECRET })
 
 
 const cekToken = (req, res, next) => {
@@ -15,17 +17,20 @@ const cekToken = (req, res, next) => {
 }
 
 
-// const auth = (decode) => {
-//   fb.api('4', { fields: ['id', 'name'] }, function (res) {
-//     if (!res || res.error) {
-//       console.log(!res ? 'error occurred' : res.error);
-//       return;
-//     }
-//     console.log(res.id);
-//     console.log(res.name);
-//   });
-// }
+const getProfile = (req, res, next) => {
+  let tokenFb = req.body.accessToken
+  fb.api('/me', { fields: ['id', 'name'] }, function (tokenFb) {
+    if (!res || res.error) {
+      console.log(!res ? 'error occurred' : res.error);
+      return;
+    }
+    console.log(res.id);
+    console.log(res.name);
+    //next()
+  });
+}
 
 module.exports = {
-  cekToken
+  cekToken,
+  getProfile
 }
